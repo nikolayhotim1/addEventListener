@@ -10,6 +10,7 @@ function addErrorClass(elementId) {
 }
 
 function addErrorClassToAllInputs() {
+    debugger;
     addErrorClass("first_name");
     addErrorClass("last_name");
     addErrorClass("address");
@@ -17,4 +18,22 @@ function addErrorClassToAllInputs() {
 
 // addErrorClass("last_name");
 
-window.setTimeout(addErrorClassToAllInputs, 2000);
+// window.setTimeout(addErrorClassToAllInputs, 2000);
+
+let sendButton = document.getElementById("send_button");
+
+// sendButton.addEventListener("click", addErrorClassToAllInputs);
+
+sendButton.addEventListener("click", onSendButtonClick);
+
+function onSendButtonClick() {
+    addErrorClass("last_name");
+}
+
+function onFirstNameKeyUp() {
+    addErrorClass("first_name");
+}
+
+let firstNameEl = document.getElementById("first_name");
+
+firstNameEl.addEventListener("keyup", onFirstNameKeyUp);
